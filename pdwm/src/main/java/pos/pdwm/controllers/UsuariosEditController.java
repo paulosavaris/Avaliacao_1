@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
+
+import pos.pdwm.dto.UsuariosDTO;
 import pos.pdwm.entidades.Usuarios;
 import pos.pdwm.record.UsuarioRecord;
 import pos.pdwm.repositorys.UsuarioRepository;
@@ -30,5 +32,33 @@ public class UsuariosEditController {
         return "usuariosEdit";
     }
 
+    @PostMapping("/users/{iduser}")
+    public String editarUser(@PathVariable int iduser, UsuariosDTO form, Usuarios dados, HttpSession session) {
 
+        Usuarios usuarioExistente = usuarioService.buscarUsuarioPorId(iduser);
+        // Verificar se o e-mail editado já está cadastrado para outro usuário
+        if (usuarioExistente != null) {
+            // Verificar se o e-mail editado é diferente do e-mail atual do usuário
+            if (!usuarioExistente.getEmail().equals(form.getUserEmailEdit())) {
+                // Verificar se o e-mail editado já está cadastrado para outro usuário
+                if (repository.existsByEmail(form.getUserEmailEdit())) {
+                    return "redirect:/users/{iduser}?errorC=Email já cadastrado";
+                }
+            }
+
+            // Verificar se os dados do usuário foram alterados
+            if (!usuarioExistente.isEqual(form)) {
+                // Atualizar os dados do usuário existente com os novos dados
+                usuarioExistente.setNome(form.getUserNomeEdit());
+                usuarioExistente.setEmail(form.getUserEmailEdit());
+                usuarioExistente.setTelefone(form.getUserTelefoneEdit());
+
+                // Salvar o usuário atualizado no banco de dados
+                repository.save(usuarioExistente);
+
+                session.setAttribute("edicaoSucesso", "Usuário editado com sucesso!");
+            }
+        }
+        return "redirect:/users/{iduser}";
+    }
 }

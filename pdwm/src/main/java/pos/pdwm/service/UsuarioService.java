@@ -25,4 +25,8 @@ public class UsuarioService {
         return usuarioOptional.orElse(null); // Retorna null se o usuário não for encontrado
     }
 
+    public void excluirUsuario(Integer id) {
+        usuariosRepository.deleteById(id.longValue());
+    }
+
 }
