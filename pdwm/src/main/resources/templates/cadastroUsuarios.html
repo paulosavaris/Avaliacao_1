@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+</head>
+
+<body>
+    <div class="cadastro-form">
+
+        <h2>Cadastro</h2>
+
+        <form method="post" action="/login?formAction=cadastra">
+            <!-- metodo para enviar/cadastrar requisicao formAction para distinguir os Post nas classe-->
+            <div class="form-group">
+                <label for="CadastroNome">Nome</label>
+                <input type="text" id="CadastroNome" name="CadastroNome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="CadastroEmail">Email</label>
+                <input type="email" id="CadastroEmail" name="CadastroEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="CadastroTelefone">Telefone</label>
+                <input type="text" id="CadastroTelefone" name="CadastroTelefone" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" value="Cadastrar">Cadastrar</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
