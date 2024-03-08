@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsuariosController {
     
     @GetMapping
-    public String carregaPagHello() {
+    public String carregaPagUsers() {
         return "usuarios";
     }
 
+    
 }
