@@ -9,4 +9,5 @@ import pos.pdwm.entidades.Usuarios;
 public interface UsuarioRepository  extends JpaRepository <Usuarios, Long>{
     
     boolean existsByEmail(String email);
+
 }

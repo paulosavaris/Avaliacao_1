@@ -16,21 +16,21 @@
 
             <h2>Cadastro</h2>
 
-            <form method="post" action="/cadastro?formAction=cadastra">
+            <form method="post">
                 <!-- metodo para enviar/cadastrar requisicao formAction para distinguir os Post nas classe-->
                 <div class="form-group">
                     <label for="CadastroNome">Nome</label>
-                    <input type="text" id="CadastroNome" name="CadastroNome" required>
+                    <input type="text" id="CadastroNome" name="CadastroNome" th:value="${usuario.nome}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="CadastroEmail">Email</label>
-                    <input type="email" id="CadastroEmail" name="CadastroEmail" required>
+                    <input type="email" id="CadastroEmail" name="CadastroEmail" th:value="${usuario.email}" required>
                 </div>
 
                 <div class="form-group">
                     <label for="CadastroTelefone">Telefone</label>
-                    <input type="text" id="CadastroTelefone" name="CadastroTelefone" required>
+                    <input type="text" id="CadastroTelefone" name="CadastroTelefone" th:value="${usuario.telefone}" required>
                 </div>
                 <div class="error-message">
                     <!-- Exiba mensagens de erro aqui, se necessário -->

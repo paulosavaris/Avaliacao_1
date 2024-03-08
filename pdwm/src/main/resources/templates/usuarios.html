@@ -7,16 +7,60 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta http-equiv="content-language" content="pt-br" />
     <meta name="robots" content="index, follow" />
-    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="stylesheet" type="text/css" href="/css/usuarioscss.css">
 </head>
 
-<body>
-    <header>
-        <h1>Usuarios</h1>
-    </header>
-    <a href="/cadastro">
-        <button type="button" class="butao">Novo Usuario</button>
-    </a>
+<body style="background: gray;">
+    <div>
+        <div class="header_trab">
+            <div>
+                <h2 class="h2_trabalhos"> Usuarios </h2>
+            </div>
+
+
+            <div class="form-group">
+                <a href="/cadastro">
+                    <button type="button" class="butao">Novo Usuario</button>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="cadastro-form">
+
+                <div class="cards-container">
+
+                    <th:block th:each="usuarios : ${usuariosInfo}">
+                        <div class="card">
+                            <a class="a_addTarefa" th:href="@{'/users/' + ${usuarios.id}}">
+
+                                <div class="card_header" th:text="${usuarios.nome}"></div>
+                            </a>
+                            <div class="card_container">
+                                <div class="card_content">
+
+                                    <div class="list-cards">
+                                        <div class="blocos">
+                                            <h4 class="h2_membros"> Email </h2>
+                                                <p th:text="${usuarios.email}"> s</p>
+                                        </div>
+
+                                        <div class="blocos">
+                                            <h4 class="h2_tarefas">Telefone</h2>
+                                                <p class="p" th:text="${usuarios.telefone}"></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </th:block>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
