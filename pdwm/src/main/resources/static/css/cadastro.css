@@ -5,6 +5,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	margin: 0;
+	background: linear-gradient(239deg, #3B9D5C 0%, #1F477A 100%)
 }
 
 .container {

@@ -1,10 +1,13 @@
 package pos.pdwm.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -61,4 +64,20 @@ public class UsuariosEditController {
         }
         return "redirect:/users/{iduser}";
     }
+
+    @PostMapping("/users/removeMember/{iduser}")
+    @ResponseBody
+    public ResponseEntity<String> removerMembro(@PathVariable int iduser) {
+        // Verifique se o usuario existe
+        Usuarios usuario = usuarioService.buscarUsuarioPorId(iduser);
+
+        if (usuario != null) {
+            // Se o membro existe, remova-o do banco de dados
+            repository.delete(usuario);
+            return new ResponseEntity<>("Usuario removido com sucesso", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Usuario não encontrado", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }

@@ -10,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="/css/usuarioscss.css">
 </head>
 
-<body style="background: gray;">
-    <div>
+<body>
+
+    <div class="div-container panel-login">
         <div class="header_trab">
             <div>
                 <h2 class="h2_trabalhos"> Usuarios </h2>
@@ -50,8 +51,11 @@
                                             <h4 class="h2_tarefas">Telefone</h2>
                                                 <p class="p" th:text="${usuarios.telefone}"></p>
                                         </div>
+                                        <div class="form-group">
+                                            <button type="button" class="remove-button"
+                                                th:attr="data-member-id=${usuarios.id}">Remover</button>
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +65,7 @@
             </div>
         </div>
     </div>
+    <script src="/scripts/remove-user.js"></script>
 </body>
 
 </html>
