@@ -15,7 +15,6 @@ import org.springframework.ui.Model;
 
 import pos.pdwm.dto.UsuariosDTO;
 import pos.pdwm.entidades.Usuarios;
-import pos.pdwm.record.UsuarioRecord;
 import pos.pdwm.repositorys.UsuarioRepository;
 import pos.pdwm.service.UsuarioService;
 
