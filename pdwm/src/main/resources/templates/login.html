@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <title>Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body>
+    
+    <div class="container" id="container">
+
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Cadastrar</button>
+		</form>
+	</div>
+
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Entrar</h1>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Entrar</button>
+		</form>
+	</div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bem Vindo de volta!</h1>
+                <p></p>
+				<button class="ghost" id="signIn">Entrar</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Ola!</h1>
+                <p></p>
+				<button class="ghost" id="signUp">Cadastrar</button>
+			</div>
+		</div>
+	</div>
+    </div>
+    <script src="/scripts/loginFlip.js"></script>
+</body>
+</html>
