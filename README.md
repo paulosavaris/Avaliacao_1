@@ -15,3 +15,9 @@ http://localhost:8080//users/iduser
 
 Versao do Java = 17
 Spring boot 3.2.3
+
+
+Usuarios e senha para login podem ser alterados no WebSecurityConfig
+src/main/java/pos/pdwm/security/WebSecurityConfig.java
+
+Ideia era fazer login por banco com criptografia de senha, deixarei para projetos futuros
