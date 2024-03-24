@@ -33,6 +33,13 @@
                     <input type="text" id="UserTelefoneEdit" name="UserTelefoneEdit" th:value="${usuario.telefone}"
                         required>
                 </div>
+
+                <div class="form-group">
+                    <label for="UserSenhaEdit">Senha</label>
+                    <input type="password" id="UserSenhaEdit" name="UserSenhaEdit" th:value="${usuario.senha}"
+                        required>
+                </div>
+
                 <div class="error-message">
                     <!-- Exiba mensagens de erro aqui, se necessário -->
                     <p th:text="${param.errorC}" style="color: red; font-size: 12px;"></p>

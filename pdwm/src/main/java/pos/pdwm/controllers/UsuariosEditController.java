@@ -54,6 +54,7 @@ public class UsuariosEditController {
                 usuarioExistente.setNome(form.getUserNomeEdit());
                 usuarioExistente.setEmail(form.getUserEmailEdit());
                 usuarioExistente.setTelefone(form.getUserTelefoneEdit());
+                usuarioExistente.setSenha(form.getUserSenhaEdit());
 
                 // Salvar o usuário atualizado no banco de dados
                 repository.save(usuarioExistente);

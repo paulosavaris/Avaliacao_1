@@ -10,29 +10,26 @@
 // @Configuration
 // @EnableWebSecurity
 // public class WebSecurityConfig {
-    
+
 //     @SuppressWarnings("removal")
 //     @Bean
-// 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 //         http
-// 			.csrf(csrf -> csrf
-// 					.disable())
-// 			.authorizeHttpRequests()
-//             .requestMatchers("/css/**","/scripts/**").permitAll()
-// 			.requestMatchers("/login?formAction=cadastralogin").permitAll()
-// 			.requestMatchers("/login?error").permitAll() //ant seria mais apropriado, verificar o authorizeHttpRequests que esta "obsoleto"
-// 			.requestMatchers(HttpMethod.OPTIONS).permitAll()
-// 			.anyRequest()
-// 			.authenticated()
-// 			.and()
-// 			.formLogin((form) -> form
-// 							.loginPage("/login")
-// 							.defaultSuccessUrl("/users", true)
-// 							.permitAll()
-// 			)
-// 			.logout((logout) -> logout.permitAll());
+//                 .csrf(csrf -> csrf
+//                         .disable())
+//                 .authorizeHttpRequests()
+//                 .requestMatchers("/css/**", "/scripts/**").permitAll()
+//                 .requestMatchers(HttpMethod.OPTIONS).permitAll()
+//                 .anyRequest()
+//                 .authenticated()
+//                 .and()
+//                 .formLogin((form) -> form
+//                         .loginPage("/login")
+//                         .defaultSuccessUrl("/users", true)
+//                         .permitAll())
+//                 .logout((logout) -> logout.permitAll());
 
-// 		return http.build();
-// 	}	
-    
+//         return http.build();
+//     }
+
 // }

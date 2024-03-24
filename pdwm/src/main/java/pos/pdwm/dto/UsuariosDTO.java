@@ -5,6 +5,7 @@ public class UsuariosDTO {
     private String UserNomeEdit;
     private String UserEmailEdit;
     private String UserTelefoneEdit;
+    private String UserSenhaEdit;
 
     
     public String getUserNomeEdit() {
@@ -24,6 +25,13 @@ public class UsuariosDTO {
     }
     public void setUserTelefoneEdit(String userTelefoneEdit) {
         UserTelefoneEdit = userTelefoneEdit;
+    }
+    
+    public String getUserSenhaEdit() {
+        return UserSenhaEdit;
+    }
+    public void setUserSenhaEdit(String userSenhaEdit) {
+        UserSenhaEdit = userSenhaEdit;
     }
 
 

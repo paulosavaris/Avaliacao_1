@@ -28,6 +28,9 @@ public class Usuarios {
     @Column(nullable = false)
     private String telefone;
 
+    @Column(nullable = false)
+    private String senha;
+
     //Getters
     public int getId() {
         return idUsuario;
@@ -45,9 +48,16 @@ public class Usuarios {
         return telefone;
     }
 
+    public String getSenha() {
+        return senha;
+    }
 
 
-    
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -67,13 +77,16 @@ public class Usuarios {
         this.nome = dados.CadastroNome();
         this.email = dados.CadastroEmail();
         this.telefone = dados.CadastroTelefone();
+        this.senha = dados.CadastroSenha();
     }
 
 
     public boolean isEqual(UsuariosDTO form) {//para comparar se os campos da entidade são iguais aos campos do objeto TarefasDTO
         return Objects.equals(this.nome, form.getUserNomeEdit()) &&
         Objects.equals(this.email, form.getUserEmailEdit()) &&
-        Objects.equals(this.telefone, form.getUserTelefoneEdit());
+        Objects.equals(this.telefone, form.getUserTelefoneEdit()) &&
+        Objects.equals(this.senha, form.getUserSenhaEdit()) ;
+
     }
 
 
