@@ -1,4 +1,4 @@
-Avaliacao 1 da materia de PRINCÍPIOS DO DESENVOLVIMENTO WEB E MOBILE.
+Avaliacao 1 e 2 da materia de PRINCÍPIOS DO DESENVOLVIMENTO WEB E MOBILE.
 
 Versao do Java = 17
 Spring boot 3.2.3
